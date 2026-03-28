@@ -1,0 +1,9 @@
+flask
+flask-cors
+torch
+numpy
+pillow
+PyPDF2
+python-docx
+torchvision
+opencv-python
