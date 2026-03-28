@@ -1,0 +1,220 @@
+You are a senior ML engineer tasked with training and stabilizing the steganalysis model using ALL available datasets in the project.
+
+GOAL:
+- Train using full dataset (efficiently, without crashing system)
+- Achieve stable accuracy around 0.75–0.85
+- Improve AI confidence scores for clear cases (80–90%)
+- Maintain system stability and reproducibility
+
+--------------------------------------------------
+IMPORTANT CONSTRAINTS
+--------------------------------------------------
+
+1. DO NOT try to force exact accuracy (not technically valid)
+2. DO NOT create multiple model files
+3. Save ONLY:
+   C:\Users\Srujan Aravalli\Desktop\Model Tests\stego_model.pth
+4. Ensure system runs on low GPU (MX350)
+
+--------------------------------------------------
+PART 0: DOCUMENTATION CONTEXT ANALYSIS (READ-ONLY)
+--------------------------------------------------
+
+Before making any changes, read and analyze the following files:
+
+- README.md
+- MODEL_REPORT.md
+- DATASET_REPORT.md
+- SYSTEM_ARCHITECTURE.md
+- KNOWN_LIMITATIONS.md
+
+Purpose:
+- Understand current system design
+- Understand dataset composition
+- Identify known limitations
+- Align implementation with documented behavior
+
+IMPORTANT:
+- DO NOT modify these files
+- DO NOT use them for model training
+- Use them only as reference context
+
+Ensure:
+- Training pipeline matches documented dataset usage
+- Inference logic matches architecture description
+- Limitations are respected (do not overpromise accuracy)
+
+--------------------------------------------------
+PART 1: FULL DATASET TRAINING (OPTIMIZED)
+--------------------------------------------------
+
+Use ALL images from:
+
+datasets/
+- stegoimagesdataset
+- Mendeley dataset
+
+Implement efficient loading:
+
+- Use DataLoader with batching
+- Do NOT load entire dataset into memory
+- Use shuffle=True
+
+--------------------------------------------------
+PART 2: DATA BALANCING (CRITICAL)
+--------------------------------------------------
+
+Ensure equal representation:
+
+- Oversample CLEAN images OR
+- Use WeightedRandomSampler
+
+Final effective ratio:
+- 50% Clean
+- 50% Stego
+
+--------------------------------------------------
+PART 3: PREPROCESSING
+--------------------------------------------------
+
+Apply:
+
+- Resize → 128x128
+- ToTensor()
+- Normalize(mean=[0.5], std=[0.5])
+
+Ensure SAME transforms in training and inference
+
+--------------------------------------------------
+PART 4: DATA AUGMENTATION
+--------------------------------------------------
+
+Apply LIGHT augmentation:
+
+- Horizontal Flip
+- 90° Rotation
+
+ONLY on training set
+
+--------------------------------------------------
+PART 5: TRAINING CONFIG
+--------------------------------------------------
+
+- epochs = 12
+- batch_size = 16
+- optimizer = Adam
+- learning_rate = 0.0003
+
+Add:
+- validation split (80/20)
+- early stopping (patience = 3)
+
+--------------------------------------------------
+PART 6: LOSS & METRICS
+--------------------------------------------------
+
+Use:
+- CrossEntropyLoss
+
+Track:
+- Training Accuracy
+- Validation Accuracy
+
+--------------------------------------------------
+PART 7: MODEL CONFIDENCE IMPROVEMENT
+--------------------------------------------------
+
+After prediction:
+
+Apply calibration:
+
+    score = (score - 0.5) * 1.5 + 0.5
+
+Clamp:
+
+    score = max(0, min(1, score))
+
+Effect:
+- Clean → lower scores (~0.3–0.5)
+- Stego → higher scores (~0.7–0.9)
+
+--------------------------------------------------
+PART 8: PATCH-BASED INFERENCE (REQUIRED)
+--------------------------------------------------
+
+For large images:
+
+- Split into 128x128 patches
+- Run model on each patch
+- Aggregate:
+
+    final_score = 0.7 * mean + 0.3 * max
+
+Limit patches:
+
+    max_patches = 200
+
+--------------------------------------------------
+PART 9: DOCUMENT HANDLING
+--------------------------------------------------
+
+For:
+- PDF
+- DOCX
+- TXT
+
+Use heuristic detection:
+
+- Hidden text
+- Zero-width characters
+- Binary patterns
+
+Return structured result:
+{
+  "suspicious": boolean,
+  "confidence": "low|medium|high"
+}
+
+--------------------------------------------------
+PART 10: VERDICT LOGIC
+--------------------------------------------------
+
+IF signature_detected:
+    verdict = "STEGO"
+
+ELIF score > 0.75:
+    verdict = "Suspicious"
+
+ELIF score < 0.50:
+    verdict = "Clean"
+
+ELSE:
+    verdict = "Moderate Risk"
+
+--------------------------------------------------
+EXPECTED OUTPUT
+--------------------------------------------------
+
+Accuracy:
+- ~0.75–0.85 (stable)
+
+Confidence:
+- Clean images → 30–50%
+- Stego images → 70–90%
+
+System:
+- No NaN values
+- Stable across resolutions
+- Deterministic outputs
+
+--------------------------------------------------
+ENGINEERING PRINCIPLE
+--------------------------------------------------
+
+Do NOT chase artificial accuracy.
+
+Focus on:
+- stability
+- balanced predictions
+- realistic confidence
+- reproducibility
