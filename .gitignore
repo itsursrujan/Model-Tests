@@ -1,6 +1,5 @@
 .venv/
 __pycache__/
-datasets/
 validation_output.txt
 *.pyc
 node_modules/
