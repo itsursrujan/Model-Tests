@@ -4,10 +4,11 @@ Hybrid steganography detection system (Signature + AI)
 
 ## Features
 - **Image steganalysis (CNN + SRM)**: Detects statistical anomalies in images using a Convolutional Neural Network and Steganalytic Rich Model filters.
+- **DeepStegAI Heatmap Visualization**: Generates interpretable Grad-CAM and difference heatmaps with statistical noise suppression to highlight manipulated regions.
+- **AI Spam & Phishing Detection**: Multi-layer Logistic Regression + TF-IDF engine with lookalike domain checking, explainability reasoning, and 3-tier risk classification.
 - **Patch-based inference (resolution independent)**: Splits larger images into 128x128 patches for detection, ensuring consistency across various resolutions.
-- **Signature detection (LSB markers)**: Deterministic detection of common LSB steganographic markers.
-- **Document detection (PDF, DOCX, TXT)**: Heuristic-based analysis to find hidden content in document formats.
-- **Stable AI scoring (no NaN)**: Hardened scoring logic to prevent numerical instability and ensure reliable outputs.
+- **Signature & Document detection**: Deterministic detection of common LSB steganographic markers and heuristic-based analysis for PDF, DOCX, and TXT files.
+- **Robust Architecture**: Cluster-ready batch processing with Redis, adaptive feedback loops for the spam model, and stable AI scoring logic.
 
 ## How to Run
 

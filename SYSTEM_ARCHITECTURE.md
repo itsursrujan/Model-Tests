@@ -2,17 +2,23 @@
 
 The AI Steganalysis system is built with a defense-in-depth philosophy, combining multiple detection methods to maximize reliability.
 
-## Dual Detection System
+## Multi-Layer Detection System
 
 ### 1. Signature Detection
 - **Purpose**: Detects known steganographic markers and signatures in binary headers and pixel data.
 - **Mechanism**: Scans for specific bit patterns and LSB markers that are common in standard steganography tools.
 - **Reliability**: Deterministic and 100% accurate for the specific patterns it is programmed to recognize.
 
-### 2. AI Detection (CNN)
+### 2. AI Steganalysis (CNN)
 - **Purpose**: Detects statistical anomalies that signature-based systems miss.
 - **Mechanism**: Uses a Convolutional Neural Network trained on SRM (Steganalytic Rich Model) noise residuals.
-- **Strength**: Can identify "noise" introduced by embedding data even when the specific tool signature is unknown.
+- **Strength**: Identifies "noise" introduced by embedding data even when the specific tool signature is unknown.
+- **Explainability**: Heatmap Generation layer runs Grad-CAM sequentially on patches (with statistical noise suppression) to overlay predictive visualization on the original media.
+
+### 3. Spam & Phishing Engine (SecureMessage)
+- **Purpose**: Analyzes textual messages and embedded URLs for risk and phishing attempts.
+- **Mechanism**: Leverages a TF-IDF vectorizer coupled with a Logistic Regression classifier, supported by an adaptive feedback loop.
+- **Output**: Issues a 3-tier risk classification (High, Medium, Low) and writes detailed reason logs to MongoDB.
 
 ## Patch-Based Inference
 To handle varying image sizes without loss of detail:

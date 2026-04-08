@@ -1,0 +1,212 @@
+Shruthi B S et al, International Journal of Computer Science and Mobile Computing, Vol.12 Issue.4, April- 2023. International Journal of Computer Science and Mobile Computing
+A Monthly Journal of Computer Science and Information Technology. USER AUTHENTICATION USING
+EYE-BLINK PASSWORD
+Shruthi B S; Manasa K B
+Assistant Professors
+Department of Information Science and Engineering
+The National Institute of Engineering, Mysuru
+
+
+Research Gate: Eye tracking recognition-based graphical authentication. Authors are Martin Mihajlov, Sime Arsenovski and Marija Trpkova - Nestorovska
+Conference Paper · October 2013
+DOI: 10.1109/ICAICT.2013.6722632
+
+
+Gaze-Based Password Authentication through Automatic Clustering of Gaze Points
+Authors are Justin Weaver, Kenrick Mock and Bogdan Hoanca 
+©2011 IEEE
+
+
+IJARSCT: A Survey on Secure Eye: Blink-Based Morse Authentication
+Volume 4, Issue 1, February 2024. 
+Authors are Ravi and Prashanth 
+
+
+IRJET: Eye Tracking for Password Authentication using Machine Learning
+Authors are Mala B M, Pavithra A, Ranjeetha J, Yamuna R & Smt. Manikantha K
+Volume: 06 Issue: 05 | May 2019
+
+
+ICIPTM: Blink Detection to Control Display Light
+Authors are Dandala Bhagath Reddy and Prince Jain
+2022 2nd International Conference on Innovative Practices in Technology and Management
+
+
+IEEE Access: SPECIAL SECTION ON INNOVATION AND APPLICATION OF INTERNET OF THINGS AND EMERGING TECHNOLOGIES IN SMART SENSING
+On Overcoming the Identified Limitations of a Usable PIN Entry Method
+Authors are NILESH CHAKRABORTY, JIANQIANG LI, SAMRAT MONDAL, FEI CHEN AND YI PAN 
+Digital Object Identifier 10.1109/ACCESS.2019.2937948
+
+
+IJERT: Realtime Eye Tracking for Password Authentication
+Authors are Asha Rani K P, Asha K N, Nidhi B Channappagoudar, Manonandan S K
+Vol. 9 Issue 10, October-2020
+
+
+Brain Computing Interface based Auto Calling Using Eye Blink Detection Algorithm
+Authors are Sree Haran A, Siyam Adit G, Vignesh N, Vimal Athitha S G, Subash Sakthivel S, Rathi G, Anuradha R
+©2021 IEEE | DOI: 10.1109/I-SMAC52330.2021.964088
+
+ICACITE: Identification of Significant Eye Blink for Tangible Human Computer Interaction
+Authors are Jashaswimalya Acharjee and Suman Deb 
+©2021 IEEE | DOI: 10.1109/ICACITE51222.2021.9404595
+
+
+Covert Attentional Shoulder Surfing: Human Adversaries Are More Powerful Than Expected
+IEEE TRANSACTIONS ON SYSTEMS, MAN, AND CYBERNETICS: SYSTEMS, VOL. 44, NO. 6, JUNE 2014
+Taekyoung Kwon, Member, IEEE, Sooyeon Shin, Associate Member, IEEE, and Sarang Na, Student Member, IEEE
+
+
+Design and Implementation of Eye Pupil Movement Based PIN Authentication System.
+Authors are Indrajit Das, Ria Das and Shalini Singh.
+2020 IEEE VLSI Device, Circuit and System Conference (VLSI-DCS), 18-19 July, 2020, ED MSIT SBC, Kolkata, India  
+
+
+Pre-AttentiveGaze: gaze-based authentication dataset with momentary visual interactions
+Authors are Junryeol Jeon, Yeo-Gyeong Noh, JooYeong Kim & Jin-Hyuk Hong
+Scientific Data
+
+
+Embedded System for Eye Blink Detection Using Machine Learning Technique
+1st. Babylon International Conference on Information Technology and Science 2021 (BICITS 2021), Babil, Iraq
+Authors are Bishar R. Ibrahim, Farhad M. Khalifa, Subhi R. M. Zeebaree, Nashwan A. Othman, Ahmed Alkhayyat, Rizgar R. Zebari, Mohammed A. M.Sadeeq
+©2021 IEEE | DOI: 10.1109/BICITS51482.2021.9509908
+
+
+Gaze analysis: A survey on its applications
+Authors are Carmen Bisogni, Michele Nappi, Genoveffa Tortora ,Alberto Del Bimbo 
+https://doi.org/10.1016/j.imavis.2024.104961
+Volume 144, April 2024, 104961
+
+
+Ocular Authentication: Fusion of Gaze and Periocular Modalities
+Authors are Dillon Lohr, Michael J. Proulx, Mehedi Hasan Raju, Oleg V. Komogortsev
+
+
+Real time eye based Password Authentication by Eye Blinking System
+International Research Journal on Advanced Science Hub 2582-4376Vol. 05 , Issue 05S May
+International Conference on intelligent COMPUting TEchnologies and Research (i-COMPUTER) 2023
+RSP Science Hub
+Authors are Buddesab, Nanda Ashwin, Shruthi M, Rekha P, Pavan Mulgund
+
+
+AIP publishing: Detection and securing the ATM pin using scrambler code algorithm 
+Authors are Puspita Dash, Ravindran Janani, Jakir Hussain Rishwana, Sivakumar Padhmapriya
+AIP Conf. Proc. 3159, 020015 (2025)
+https://doi.org/10.1063/5.0247409
+
+
+Science Direct: A systematic review of PIN-entry methods resistant to shoulder-surfing attacks
+Farid Binbeshr, M.L. Mat Kiah, Lip Yee Por, A.A. Zaidan
+Volume 101, February 2021, 102116
+
+
+Wiley Online Library: Preventing Shoulder-Surfing Attack with the Concept of Concealing the Password Objects’ Information
+Authors are Peng Foong Ho, Yvonne Hwei-Syn Kam, Mee Chin Wee, Yu Nam Chong, Lip Yee Por
+First published: 27 May 2014 https://doi.org/10.1155/2014/838623 Citations:15
+
+
+IJCRT: ATM PIN Security System Using Haptic Feedback
+Authors are A.Santhosh kumar, N.Mannoj, Mohamed Azharudeen, S.Muthiah, J.Praveen
+© 2018 IJCRT | Volume 6, Issue 2 April 2018 | ISSN: 2320-2882
+
+
+ACM Digital Library: Reducing shoulder-surfing by using gaze-based password entry
+Authors are Manu Kumar, Tal Garfinkel, Dan Boneh, Terry Winograd
+https://doi.org/10.1145/1280680.1280683
+
+
+IJCRT: FACIAL RECOGNITION SYSTEM USING OPENCV
+Authors are Vivek Anand, Vimal Singh Parihar, Shubham Kumar Sharma, Vikas Singhal and Pramod Kumar Sethy
+© 2021 IJCRT | Volume 9, Issue 7 July 2021 | ISSN: 2320-2882
+
+
+IRJET: Eye Detection using Haar Cascade Classifier
+Authors are Jyotsna More, Divyani Sutar, Remica Sequeira, Vedant Chavan
+Volume: 08 Issue: 05 | May 2021 
+
+
+Reducing Shoulder-surfing by Using Gaze-based Password Entry 
+Authors are Manu Kumar, Tal Garfinkel, Dan Boneh, Terry Winograd 
+
+-------------------------------------------------------------------------
+
+Springer: Investigating Natural Shoulder Surfing Behavior in the Wild: A Research Space and Case Study
+Authors are Yasmeen Abdrabou, Rivu Radiah, Alessia Fischer, Alia Saad, Habiba Farzand, Pascal Knierim & Florian Alt 
+Conference paper | First Online: 09 September 2025
+
+
+Bon View Publishing: Prevention of ShoulderSurfing Attack Using Shifting Condition with the Digraph Substitution Rules
+Authors are Amanul Islam, Fazidah Othman, Nazmus Sakib and Hafiz Md. Hasan Babu
+Published online: 15 November 2022
+
+
+Vision: Towards Fully Shoulder-Surfing Resistant and Usable Authentication for Virtual Reality
+Authors are Tobias Lange, Philipp Matheis, Reyhan Duzg, Melanie Volkamer and Peter Mayer
+published at 26 February 2024 | https://dx.doi.org/10.14722/usec.2024.23092
+
+
+International Journal of Research - Granthalaayah :IMPLEMENTATION OF FACE DETECTION AND RECOGNITION USING OPENCV FOR REAL-TIME BIOMETRIC AUTHENTICATION AND ATTENDANCE SYSTEMS
+Authors are Ashish Kumar, Prem Kumar Tiwari, Rohan and Rinku
+Vol. 12 No. 11 (2024): Volume 12 Issue 11 November 2024 Edition 
+
+
+IIETA: Concept of Using Eye Tracking Technology to Assess and Ensure Cybersecurity, Functional Safety and Usability
+Authors are Oleksandr Gordieiev, Vyacheslav Kharchenko, Oleg Illiashenko,  Olga Morozova ,Magomediemin Gasanov 
+© 2021 IIETA. This article is published by IIETA
+
+
+PrivacyScout: Assessing Vulnerability to Shoulder Surfing on Mobile Devices
+Authors are Mihai Bâce,  Alia Saad,  Mohamed Khamis,  Stefan Schneegass and Andreas Bulling
+Published at 2022 by Proceedings on Privacy Enhancing Technologies
+
+
+IIETA: Face Recognition System for Criminal Identification in CCTV Footage Using Keras and OpenCV
+Authors are Ruchi Rani, Kiran Napte, Sumit Kumar, Sanjeev Kumar Pippal and  Megha Dalsaniya
+Copyright: ©2025 The authors. This article is published by IIETA 
+
+
+Science Direct: A proposed biometric authentication hybrid approach using iris recognition for improving cloud security 
+Authors are Hosam El-Sofany, Belgacem Bouallegue, Yasser M. Abd El-Latif 
+Published at 2024.
+
+
+IIETA: RoundPIN: Shoulder Surfing Resistance for PIN Entry with Randomize Keypad 
+Authors are Seerwan Waleed Jirjees, Ahmed Raoof Nasserand Ali Majeed Mahmood
+© 2021 IIETA. This article is published by IIETA 
+
+
+SSRN: An Analysis of Various Face Recognition Models Available in OpenCV and DeepFace
+Authors are Bedanta Nath and Priyakshi Mahanta
+Published by SSRN at 26 Sep 2025
+
+
+Science Direct: Improving eye movement biometrics in low frame rate eye-tracking devices using periocular and eye blinking features
+Authors are Sherif Nagib Abbas Seha, Dimitrios Hatzinakos, Ali Shahidi Zandi, Felix J.E. Comeau 
+2021 | https://doi.org/10.1016/j.imavis.2021.104124
+
+
+
+IJCA: Face Detection and Recognition using OpenCV
+Authors are Ajay Kumar, Shivansh Chaudhary, Sonik Sangal, Raj Dhama
+Year of Publication: 2022 || https://ijcaonline.org/archives/volume184/number11/32369-2022922085/
+
+
+Frontiers in Neurobics: Eye Tracking Feature Extraction for Biometric Machine Learning
+Authors are Jia Zheng Lim,James Mountstephens and Jason Teo
+February 2022 || Volume 15 || Article 796895
+
+
+IEEE: SDN as a Tool for Energy Saving
+Authors are Irena Šeremet, Suada Hadžović, Saša Mrdović and Samir Čaušević
+Serbia, Belgrade, November 26-27, 2019.
+
+
+IRJETS: OPENCV-BASED ATM SECURITY SOLUTION WITH FACIAL RECOGNITION CAPACITY
+Authors are Binusha S, Ms. Susai Mary Susila. A.
+Volume:06/Issue:08/August-2024 || DOI : https://www.doi.org/10.56726/IRJMETS61262
+
+
+IJARCCE: Securing ATM Transactions with Facial Recognition-Based Verification System
+Authors are Naraayanan, Neelraj and Vinothini
+Vol. 14, Issue 4, April 2025 || DOI: 10.17148/IJARCCE.2025.14490

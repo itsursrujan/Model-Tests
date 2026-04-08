@@ -1,0 +1,10 @@
+a, b = 0, 1
+n = 8
+print(f"{a},{b},", end="")
+i = 1
+while i <= n:
+    c = a + b # 1 2
+    print(f"{c},",end="")
+    a = b # 1 1
+    b = c # 1 2
+    i += 1

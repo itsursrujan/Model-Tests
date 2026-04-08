@@ -1,0 +1,77 @@
+15. SELECT b.branch_city, AVG(a.balance) AS avg_balance
+FROM account a
+JOIN branch b ON a.branchcode = b.branch_code
+GROUP BY b.branch_city;
+
+16. SELECT b.branch_city, COUNT(DISTINCT d.cust_no) AS num_depositors
+FROM depositor d
+JOIN account a ON d.ac_no = a.account_no
+JOIN branch b ON a.branchcode = b.branch_code
+GROUP BY b.branch_city;
+
+17. SELECT bc.customer_name
+FROM bank_customer bc
+JOIN depositor d ON bc.customer_number = d.cust_no
+JOIN account a ON d.ac_no = a.account_no
+JOIN branch b ON a.branchcode = b.branch_code
+WHERE b.branch_city = 'Hubli'
+GROUP BY bc.customer_name
+HAVING COUNT(a.account_no) <= 1;
+
+18. SELECT bc.customer_name
+FROM bank_customer bc
+JOIN depositor d ON bc.customer_number = d.cust_no
+JOIN account a ON d.ac_no = a.account_no
+JOIN branch b ON a.branchcode = b.branch_code
+WHERE b.branch_city = 'Hubli'
+GROUP BY bc.customer_name
+HAVING COUNT(a.account_no) >= 2;
+
+
+19. SELECT DISTINCT customer_name
+FROM bank_customer bc
+LEFT JOIN depositor d ON bc.customer_number = d.cust_no
+LEFT JOIN borrower br ON bc.customer_number = br.c_no;
+
+20. SELECT DISTINCT bc.customer_name
+FROM bank_customer bc
+JOIN depositor d ON bc.customer_number = d.cust_no
+WHERE bc.customer_number NOT IN (
+    SELECT c_no FROM borrower
+);
+
+21. SELECT DISTINCT bc.customer_name
+FROM bank_customer bc
+JOIN depositor d ON bc.customer_number = d.cust_no
+JOIN account a ON d.ac_no = a.account_no
+JOIN branch b ON a.branchcode = b.branch_code
+WHERE b.branch_city = 'Hubli'
+ORDER BY bc.customer_name;
+
+22. SELECT loan_no, amount
+FROM loan
+ORDER BY amount DESC, loan_no ASC;
+
+23. SELECT COUNT(DISTINCT cust_no) AS num_depositors
+FROM depositor;
+
+24.SELECT b.branch_city
+FROM branch b
+JOIN account a ON b.branch_code = a.branchcode
+GROUP BY b.branch_city
+HAVING AVG(a.balance) > 1000;
+
+25. SELECT customer_name
+FROM bank_customer bc
+JOIN depositor d ON bc.customer_number = d.cust_no
+JOIN account a ON d.ac_no = a.account_no
+JOIN branch b ON a.branchcode = b.branch_code
+WHERE b.branch_city = 'Hubli' 
+GROUP BY bc.customer_name
+HAVING COUNT(DISTINCT b.branch_code) = (
+    SELECT COUNT(branch_code)
+    FROM branch
+    WHERE branch_city = 'Hubli'
+);
+
+

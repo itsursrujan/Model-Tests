@@ -2,11 +2,17 @@
 
 Comprehensive details about the AI model powering the detection system.
 
-## Model Type
+## Model Types
+### 1. Image Steganalysis
 - **SRM + CNN (4-layer architecture)**: The model utilizes Steganalytic Rich Model (SRM) filters to capture noise residuals, followed by a 4-layer Convolutional Neural Network for classification.
+- **Explainable AI (Heatmaps)**: Leverages Grad-CAM and Difference heatmaps with statistical noise suppression and thresholding to visually highlight manipulated regions inside images.
+
+### 2. Textual Spam & Phishing Detection
+- **Logistic Regression + TF-IDF**: A multi-layer architecture combining term frequency-inverse document frequency encoding for text classification, integrated with heuristic and deterministic domain reputation/URL checks (Phishing detection).
 
 ## Input
-- **128x128 patches**: Images are processed in 128x128 blocks. This patch-based approach allows the model to handle images of any resolution efficiently and avoids resizing artifacts that could obscure steganographic signals.
+- **Image Pipeline**: 128x128 patches. Images are processed in 128x128 blocks to efficiently handle any resolution dynamically without downscaling and losing critical stego noise.
+- **Text Pipeline**: Raw text content (e.g., up to 33MB of batch parsed data) mapped to unified semantic tokens.
 
 ## Training Details
 - **Epochs**: 10

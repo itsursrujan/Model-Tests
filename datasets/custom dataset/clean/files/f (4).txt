@@ -1,0 +1,86 @@
+...........................................................
+Detection and Securing the ATM PIN Using Scrambler Code Algorithm (2025) - Proposes scrambler code for secure PIN entry with encryption; faces usability complexity issues.
+
+Face Recognition System for Criminal Identification in CCTV (2025) - Uses biometric recognition techniques with Keras and OpenCV for surveillance; accuracy reduces in low-res CCTV.
+
+An Analysis of Various Face Recognition Models in OpenCV DeepFace (2025) - Comparative evaluation of OpenCV DeepFace models using deep learning; lacks practical implementation.
+
+Investigating Natural Shoulder Surfing Behavior in the Wild (2025) - Observational case study on real-world shoulder surfing behavior; does not provide prevention mechanisms.
+
+Securing ATM Transactions with Facial Recognition-Based Verification System (2025) - Facial biometric verification for ATM transactions using machine learning; requires high-quality cameras, computationally heavy.
+
+
+A Survey on Secure Eye Blink-Based Morse Authentication (2024) - Conceptual survey on Morse code authentication via eye blinking; no practical implementation yet.
+
+Gaze Analysis: A Survey on its Applications (2024) - Reviews gaze-based authentication applications; mostly review without implementation.
+
+Towards Fully Shoulder-Surfing Resistant Usable VR Authentication (2024) - Focus on shoulder-surfing resistant authentication for VR using usable security principles; hardware intensive.
+
+Face Detection Recognition Using OpenCV for Biometric Authentication Attendance (2024) - Real-time face recognition for attendance systems; limited to controlled environments.
+
+Proposed Biometric Authentication Hybrid Using Iris for Cloud Security (2024) - Hybrid iris biometric system targeted for cloud security; challenges include high computational cost.
+
+
+Pre-AttentiveGaze Gaze-Based Authentication Dataset (2024) - Presents gaze-based dataset for authentication research; does not propose an authentication system.
+
+Ocular Authentication Fusion of Gaze and Periocular Modalities (2024) - Fusion of gaze and periocular biometric modalities for multi-factor authentication; implementation complexity high.
+
+OpenCV-Based ATM Security Solution with Facial Recognition Capacity (2024) - ATM security via facial recognition to prevent unauthorized access; sensitive to lighting and photo spoofing.
+...................................................................................................................................................................................
+Real-time Eye Based Password Authentication by Eye Blinking System (2023) - Eye blink detection system for password authentication; may produce false positives.
+
+User Authentication using Eye-Blink Password (2023) - Eye blink sensor-based password authentication system; limited scalability.
+
+Let me know if summary for the next groups of papers (16 to 30) is needed.
+
+Blink Detection to Control Display Light (2022) - Uses eye blink sensors and microcontrollers to control display lighting, not directly related to authentication.
+
+Eye Tracking Feature Extraction for Biometric Machine Learning (2022) - Focuses on extracting eye-tracking features for machine learning-based authentication; needs large datasets for reliability.
+
+Face Detection Recognition using OpenCV (2022) - Implements OpenCV and Haar cascades for facial authentication, sensitive to lighting and angle variations.
+
+Prevention of Shoulder-Surfing Attack Using Shifting Condition with Digraph Substitution (2022) - Introduces cryptographic digraph substitution to secure PIN entry against shoulder surfing, limited applicability to PINs.
+
+Embedded System for Eye Blink Detection Using Machine Learning Technique (2021) - Designs ML-based blink detection for embedded systems, faces hardware constraints and processing delays.
+
+Identification of Significant Eye Blink for Tangible Human Computer Interaction (2021) - Uses blink sensors and HCI algorithms to detect meaningful blinks for interactive systems, limited to human-computer interaction scenarios.
+
+A Systematic Review of PIN-Entry Methods Resistant to Shoulder-Surfing Attacks (2021) - Reviews various graphical, haptic, and gaze-based PIN entry methods, no new solutions proposed.
+
+Improving Eye Movement Biometrics in Low Frame Rate Devices (2021) - Examines periocular blink features to improve biometric recognition, performance drops with high frame-rate systems.
+
+RoundPIN Shoulder Surfing Resistance for PIN Entry with Randomized Keypad (2021) - Suggests randomized PIN keypad designs for shoulder-surfing resistance, with usability challenges especially for quick transactions.
+.....................................................................................................................................................
+Concept of Using Eye Tracking for Cybersecurity Usability (2021) - Explores the use of eye tracking to evaluate cybersecurity usability, presented as a conceptual study.
+
+Facial Recognition System Using OpenCV (2021) - Utilizes OpenCV and ML models for biometric authentication; sensitive to lighting conditions and risk of spoofing.
+
+Eye Detection Using Haar Cascade Classifier (2021) - Applies Haar classifiers for eye detection, with limited robustness in cases of occlusion.
+
+Design and Implementation of Eye Pupil Movement Based PIN Authentication System (2020) - Employs pupil movement for PIN authentication, vulnerable to errors in poor lighting.
+
+Realtime Eye Tracking for Password Authentication (2020) - Real-time tracking technology aids secure login, but is hardware-intensive.
+
+Eye Tracking for Password Authentication using Machine Learning (2019) - Machine learning-based eye-tracking authentication, reliant on training data and specialized hardware.
+
+On Overcoming the Identified Limitations of a Usable PIN Entry Method (2019)
+Improves PIN entry methods for usable security, emphasizing design for IoT environments; does not focus on eye-tracking authentication directly.
+
+ATM PIN Security System Using Haptic Feedback (2018)
+Presents vibration feedback technology for PIN entry in ATM systems using haptics; effective but requires ATM hardware modification.
+
+Covert Attentional Shoulder Surfing Human Adversaries Are More Powerful Than Expected (2014)
+Explores human vulnerabilities in shoulder surfing, highlighting adversarial capabilities; does not present concrete authentication methods.
+
+Preventing Shoulder-Surfing Attack with Concealing Password Objects (2014)
+Introduces a method for password entry concealment with secure interface design; challenges include usability under real conditions.
+
+Eye Tracking Recognition-Based Graphical Authentication (2013)
+Implements graphical authentication via eye-tracking hardware and recognition algorithms; faces high hardware costs and usability problems.
+
+Gaze-Based Password Authentication through Automatic Clustering of Gaze Points (2011)
+Uses clustering algorithms on gaze points for password entry; accuracy affected by calibration errors and unsuitable for all users.
+
+Reducing Shoulder-Surfing by Using Gaze-Based Password Entry (2007)
+Early implementation of gaze-based password systems for shoulder-surfing resistance; slow authentication and high hardware dependency.
+

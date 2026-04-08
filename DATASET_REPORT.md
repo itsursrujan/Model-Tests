@@ -16,6 +16,12 @@ Detailed information about the datasets used for training and testing the AI Ste
   - BPCS (Bit-Plane Complexity Segmentation)
   - PVD (Pixel Value Differencing)
 
+### 3. Custom Dataset
+- **Contents**: 506 files total, split into `clean` and `stego` classes.
+- **Stego Folder**: Highly consistent, containing exactly 249 steganographic `.png` images.
+- **Clean Folder**: Contains a mixture of 164 images (`.png`, `.jpg`, `.jpeg`) alongside 93 document and code files (`.docx`, `.pdf`, `.txt`, `.py`).
+- **Data Quality Note**: Exhibits class imbalance for image classification (249 stego vs 164 clean) and the presence of non-image files in the `clean` class requires filtering before ingestion by image processing pipelines.
+
 ## Final Training Dataset Configuration
 - **Total**: 16,000 images
 - **Clean samples**: 8,000
