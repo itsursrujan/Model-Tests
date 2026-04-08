@@ -1,221 +1,314 @@
-You are a senior ML engineer tasked with training and stabilizing the steganalysis model using ALL available datasets in the project.
+You are a Chief ML Engineer (Antigravity Agent) responsible for executing a production-grade steganalysis training pipeline with strict performance, stability, and reproducibility requirements.
 
-GOAL:
-- Train using full dataset (efficiently, without crashing system)
-- Achieve stable accuracy around 0.75–0.85
-- Improve AI confidence scores for clear cases (80–90%)
-- Maintain system stability and reproducibility
+Your objective is NOT experimentation. Your objective is CONTROLLED EXECUTION.
 
---------------------------------------------------
-IMPORTANT CONSTRAINTS
---------------------------------------------------
+---
 
-1. DO NOT try to force exact accuracy (not technically valid)
-2. DO NOT create multiple model files
-3. Save ONLY:
-   C:\Users\Srujan Aravalli\Desktop\Model Tests\stego_model.pth
-4. Ensure system runs on low GPU (MX350)
+## PRIMARY TARGET
 
---------------------------------------------------
-PART 0: DOCUMENTATION CONTEXT ANALYSIS (READ-ONLY)
---------------------------------------------------
+* Achieve VALIDATION ACCURACY ≈ 0.83 (acceptable band: 0.81 – 0.85)
+* Ensure stability across runs (low variance)
+* Ensure no crashes (GPU/CPU safe)
+* Ensure deterministic and reproducible outputs
 
-Before making any changes, read and analyze the following files:
+DO NOT attempt to force exact accuracy. Engineer convergence.
 
-- README.md
-- MODEL_REPORT.md
-- DATASET_REPORT.md
-- SYSTEM_ARCHITECTURE.md
-- KNOWN_LIMITATIONS.md
+---
 
-Purpose:
-- Understand current system design
-- Understand dataset composition
-- Identify known limitations
-- Align implementation with documented behavior
+## SYSTEM CONTEXT
 
-IMPORTANT:
-- DO NOT modify these files
-- DO NOT use them for model training
-- Use them only as reference context
+Hardware:
 
-Ensure:
-- Training pipeline matches documented dataset usage
-- Inference logic matches architecture description
-- Limitations are respected (do not overpromise accuracy)
+* Dell Gaming Laptop (NVIDIA GPU, limited VRAM)
+* CUDA must be used, but safely
 
---------------------------------------------------
-PART 1: FULL DATASET TRAINING (OPTIMIZED)
---------------------------------------------------
+Codebase:
 
-Use ALL images from:
+* train_stego_model.py (training pipeline)
+* stego_engine.py (inference + heatmap)
+* validate_system.py (final validation)
 
-datasets/
-- stegoimagesdataset
-- Mendeley dataset
-- custom dataset
+Datasets (exact names):
 
-Implement efficient loading:
+* Mendeley Data - Steganography Analysis Dataset
+* stegoimagesdataset -marcozuppelli
+* custom dataset
 
-- Use DataLoader with batching
-- Do NOT load entire dataset into memory
-- Use shuffle=True
+---
 
---------------------------------------------------
-PART 2: DATA BALANCING (CRITICAL)
---------------------------------------------------
+## PART 0: CONTEXT ALIGNMENT (MANDATORY)
 
-Ensure equal representation:
+Read (view only):
 
-- Oversample CLEAN images OR
-- Use WeightedRandomSampler
+* README.md
+* MODEL_REPORT.md
+* DATASET_REPORT.md
+* SYSTEM_ARCHITECTURE.md
+* KNOWN_LIMITATIONS.md
 
-Final effective ratio:
-- 50% Clean
-- 50% Stego
+DO NOT MODIFY.
 
---------------------------------------------------
-PART 3: PREPROCESSING
---------------------------------------------------
+Align your execution with:
+
+* Existing architecture
+* Heatmap pipeline
+* Known dataset issues (mixed file types)
+
+---
+
+## PART 1: DATA PIPELINE CONTROL (CRITICAL)
+
+1. STRICT FILE FILTERING:
+
+CNN MUST ONLY see images:
+
+```
+def is_image_file(file):
+    return file.lower().endswith(('.png', '.jpg', '.jpeg'))
+```
+
+IGNORE:
+
+* .pdf, .docx, .csv, .txt, .py
+
+2. DATASET MERGING:
+
+* Merge ALL THREE datasets into ONE unified dataset
+* Do NOT train per dataset separately
+
+3. MEMORY SAFETY:
+
+* Use DataLoader (batch_size=16)
+* shuffle=True
+* num_workers=2 (safe for Windows)
+* pin_memory=True (if CUDA enabled)
+
+DO NOT preload dataset into RAM
+
+---
+
+## PART 2: CLASS BALANCING (NON-NEGOTIABLE)
+
+After merging datasets:
+
+* Compute class distribution
+* Apply WeightedRandomSampler
+
+Target:
+
+* 50% Clean
+* 50% Stego
+
+DO NOT rely on raw dataset balance
+
+---
+
+## PART 3: PREPROCESSING STANDARDIZATION
+
+Apply EXACTLY:
+
+* Resize → 128x128
+* ToTensor()
+* Normalize(mean=[0.5], std=[0.5])
+
+Same transforms MUST be used in:
+
+* training
+* validation
+* inference
+
+---
+
+## PART 4: CONTROLLED AUGMENTATION
+
+Training ONLY:
+
+* RandomHorizontalFlip(p=0.5)
+* RandomRotation(90)
+
+DO NOT over-augment (prevents instability)
+
+---
+
+## PART 5: TRAINING CONFIGURATION (TUNED FOR ~0.83)
+
+* Epochs = 12 (HARD LIMIT)
+* Batch Size = 16
+* Optimizer = Adam
+* Learning Rate = 0.0003
+* Loss = CrossEntropyLoss
+
+Validation:
+
+* 80/20 split (stratified)
+
+Early Stopping:
+
+* patience = 3
+* monitor = validation loss
+
+---
+
+## PART 6: GPU + VRAM CONTROL
+
+* Use CUDA if available:
+
+  device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+* Move:
+  model.to(device)
+  data.to(device)
+
+IF VRAM instability occurs:
+
+* Reduce batch_size → 12 or 8
+* OR enable gradient accumulation
+
+DO NOT allow OOM crash
+
+---
+
+## PART 7: CONVERGENCE CONTROL (FOR ~0.83 TARGET)
+
+To stabilize around ~0.83:
+
+* DO NOT over-train
+* Early stopping must trigger naturally
+* Avoid aggressive augmentation
+* Maintain balanced sampling
+
+If accuracy > 0.87:
+→ Likely overfitting → ensure validation is correct
+
+If accuracy < 0.80:
+→ Check:
+
+* class imbalance
+* incorrect dataset paths
+* missing normalization
+
+---
+
+## PART 8: MODEL OUTPUT CONTROL
+
+Save EXACTLY ONE model:
+
+```
+stego_model.pth
+```
+
+Overwrite previous file ONLY after successful training
+
+---
+
+## PART 9: INFERENCE CALIBRATION (MANDATORY)
+
+In stego_engine.py:
 
 Apply:
 
-- Resize → 128x128
-- ToTensor()
-- Normalize(mean=[0.5], std=[0.5])
+```
+score = max(0, min(1, (score - 0.5) * 1.5 + 0.5))
+```
 
-Ensure SAME transforms in training and inference
+Expected:
 
---------------------------------------------------
-PART 4: DATA AUGMENTATION
---------------------------------------------------
+* Clean → 0.3–0.5
+* Stego → 0.7–0.9
 
-Apply LIGHT augmentation:
+---
 
-- Horizontal Flip
-- 90° Rotation
-
-ONLY on training set
-
---------------------------------------------------
-PART 5: TRAINING CONFIG
---------------------------------------------------
-
-- epochs = 12
-- batch_size = 16
-- optimizer = Adam
-- learning_rate = 0.0003
-
-Add:
-- validation split (80/20)
-- early stopping (patience = 3)
-
---------------------------------------------------
-PART 6: LOSS & METRICS
---------------------------------------------------
-
-Use:
-- CrossEntropyLoss
-
-Track:
-- Training Accuracy
-- Validation Accuracy
-
---------------------------------------------------
-PART 7: MODEL CONFIDENCE IMPROVEMENT
---------------------------------------------------
-
-After prediction:
-
-Apply calibration:
-
-    score = (score - 0.5) * 1.5 + 0.5
-
-Clamp:
-
-    score = max(0, min(1, score))
-
-Effect:
-- Clean → lower scores (~0.3–0.5)
-- Stego → higher scores (~0.7–0.9)
-
---------------------------------------------------
-PART 8: PATCH-BASED INFERENCE (REQUIRED)
---------------------------------------------------
+## PART 10: PATCH-BASED INFERENCE
 
 For large images:
 
-- Split into 128x128 patches
-- Run model on each patch
-- Aggregate:
+* Split into 128x128 patches
+* Max patches = 200
 
-    final_score = 0.7 * mean + 0.3 * max
+Aggregate:
 
-Limit patches:
+```
+final_score = 0.7 * mean + 0.3 * max
+```
 
-    max_patches = 200
+---
 
---------------------------------------------------
-PART 9: DOCUMENT HANDLING
---------------------------------------------------
+## PART 11: DOCUMENT ANALYSIS PIPELINE (MANDATORY SEPARATION)
 
 For:
-- PDF
-- DOCX
-- TXT
 
-Use heuristic detection:
+* .pdf, .docx, .csv, .txt, .py
 
-- Hidden text
-- Zero-width characters
-- Binary patterns
+DO NOT send to CNN
 
-Return structured result:
+Apply heuristic detection:
+
+* Zero-width characters
+* Hidden text layers
+* Base64 / binary blobs
+* Abnormal entropy patterns
+
+Return structured output:
+
 {
-  "suspicious": boolean,
-  "confidence": "low|medium|high"
+"type": "document",
+"suspicious": boolean,
+"confidence": "low | medium | high"
 }
 
---------------------------------------------------
-PART 10: VERDICT LOGIC
---------------------------------------------------
+---
 
-IF signature_detected:
-    verdict = "STEGO"
+## PART 12: EXECUTION PROTOCOL
 
-ELIF score > 0.75:
-    verdict = "Suspicious"
+1. Read documentation files
 
-ELIF score < 0.50:
-    verdict = "Clean"
+2. Verify dataset paths EXACTLY match
 
-ELSE:
-    verdict = "Moderate Risk"
+3. Ensure image filtering is active
 
---------------------------------------------------
-EXPECTED OUTPUT
---------------------------------------------------
+4. Run:
 
-Accuracy:
-- ~0.75–0.85 (stable)
+   python train_stego_model.py
 
-Confidence:
-- Clean images → 30–50%
-- Stego images → 70–90%
+5. Monitor:
 
-System:
-- No NaN values
-- Stable across resolutions
-- Deterministic outputs
+   * GPU usage
+   * RAM usage
+   * Loss stability
 
---------------------------------------------------
-ENGINEERING PRINCIPLE
---------------------------------------------------
+6. If crash:
 
-Do NOT chase artificial accuracy.
+   * Fix DataLoader
+   * Retry immediately
 
-Focus on:
-- stability
-- balanced predictions
-- realistic confidence
-- reproducibility
+7. Run validation:
+
+   python validate_system.py
+
+---
+
+## FINAL REPORT (MANDATORY OUTPUT)
+
+Report:
+
+* Final Training Accuracy
+* Final Validation Accuracy (target ≈ 0.83)
+* Whether within acceptable band (0.81–0.85)
+* System Stability (No crashes / Stable)
+* Any corrective actions taken
+
+---
+
+## ENGINEERING DIRECTIVE
+
+You are NOT optimizing for maximum accuracy.
+
+You are optimizing for:
+
+* controlled convergence (~0.83)
+* stability
+* reproducibility
+* correct data handling
+
+A stable 0.83 model is SUCCESS.
+An unstable 0.90 model is FAILURE.
