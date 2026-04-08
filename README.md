@@ -31,10 +31,19 @@ Hybrid steganography detection system (Signature + AI)
 ## Folder Structure Overview
 - `run.py`: Main backend entry point.
 - `detection_engine.py`: Core logic for Image and Document analysis.
-- `steganalysis_model.py`: Model architecture definition (StegoCNN).
 - `document_detector.py`: Heuristics for PDF, DOCX, and TXT analysis.
+- `steganalysis_model.py`: Model architecture definition for StegoCNN.
+- `stego_engine.py`: Engine for applying deep learning heatmap and steganalysis.
+- `train_stego_model.py`: Script to train the steganography detection model.
+- `validate_system.py`: Script to validate the entire system.
+- `stego_model.pth`: Trained model weights for steganography detection.
+- `requirements.txt`: Python backend dependencies.
 - `frontend/`: React components and UI code.
-- `datasets/`: (Excluded from repository) Source training data.
+- `datasets/`: Source training data and custom datasets.
+- `DATASET_REPORT.md`: Comprehensive report on datasets used.
+- `KNOWN_LIMITATIONS.md`: Known system limits and constraints.
+- `MODEL_REPORT.md`: Details and statistics of the AI models.
+- `SYSTEM_ARCHITECTURE.md`: High-level system architecture design.
 
 ## Model File
 The trained model weights are stored in:
